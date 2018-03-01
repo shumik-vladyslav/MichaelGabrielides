@@ -1,0 +1,37 @@
+<div class="container-fluid wrapper">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 login-form">
+      <div class="row">
+        <div class="col-md-12 login-header">
+          <div class="col-md-3">
+            <img src="../../assets/logo.png" alt="Logo">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 login-body">
+          <p>Welcome <span *ngIf="!registerShow">back!</span></p>
+          <div class="col-md-12 ">
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <input type="text" placeholder="User name" [(ngModel)]="login.username" >
+          </div>
+          <div class="col-md-12 input-row">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="text" placeholder="Password" [(ngModel)]="login.password">
+          </div>
+          <div class="col-md-12 input-row">
+            <re-captcha (resolved)="resolved($event)" siteKey="6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej"></re-captcha>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button (click)="signIn()">
+                Enter
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
